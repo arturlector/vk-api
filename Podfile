@@ -8,5 +8,12 @@ target 'vk-api' do
   # Pods for vk-api
 
   pod 'Alamofire'
+  pod 'SwiftKeychainWrapper'
+  pod 'RealmSwift'
+  
+  pod 'DynamicJSON'
+  
+  pod 'SDWebImage'
+  pod 'Kingfisher'
 
 end

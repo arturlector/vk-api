@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import SwiftKeychainWrapper
 
 class AuthViewController: UIViewController, WKNavigationDelegate {
 
@@ -19,6 +20,13 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        if let token = KeychainWrapper.standard.string(forKey: "vkToken") {
+//            Session.shared.token = token
+//            Session.shared.userId = KeychainWrapper.standard.string(forKey: "userId") ?? ""
+//            showMainTabBar()
+//            return
+//        }
+        
         //OAuth
         authorizeToVK()
     }
@@ -72,7 +80,10 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         //TODO: - Отслеживать протухание токена
         if let token = params["access_token"], let userId = params["user_id"]  {
             print("TOKEN = ", token as Any)
-            //KeychainWrapper.standard.set(token, forKey: "vkToken")
+            
+            KeychainWrapper.standard.set(token, forKey: "vkToken")
+            KeychainWrapper.standard.set(token, forKey: "userId")
+            
             Session.shared.token = token
             Session.shared.userId = userId
             
