@@ -160,9 +160,9 @@
 		125B72BB268267E100E273C8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				125B72BC268267F100E273C8 /* Friends.swift */,
 				125B72C5268B906C00E273C8 /* BaseObject.swift */,
 				125B72C7268B909A00E273C8 /* UserModel.swift */,
+				125B72BC268267F100E273C8 /* Friends.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
